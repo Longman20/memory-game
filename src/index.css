@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f4f8;
+  color: #222;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  background: whitesmoke;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.card:hover {
+  border-color: #666;
+  transform: translateY(-2px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.win {
+  text-align: center;
+  padding: 2rem;
+}
+
+.win button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.lost {
+  text-align: center;
+  padding: 2rem;
+}
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: black;
+}
