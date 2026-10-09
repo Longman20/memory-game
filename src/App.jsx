@@ -20,6 +20,7 @@ export default function App() {
   const [clickedIds, setClickedIds] = useState([]);
   const [bestScore, setBestScore] = useState(0);
   const [hasLost, setHasLost] = useState(false);
+  const [showGuide, setShowGuide] = useState(true);
 
   const score = clickedIds.length;
   const hasWon = cards.length > 0 && score === cards.length;
@@ -60,6 +61,7 @@ export default function App() {
   }, []);
 
   function handleCardClick(id) {
+    setShowGuide(false);
     if (clickedIds.includes(id)) {
       setClickedIds([]);
       setHasLost(true);
@@ -83,6 +85,19 @@ export default function App() {
     <>
       <h2 className="heading">POKEMON MEMORY GAME</h2>
       <Scoreboard score={score} bestScore={bestScore} />
+      <div className="guide">
+        <button onClick={() => setShowGuide(!showGuide)}>
+          {showGuide ? "Hide guide" : "How to play"}
+        </button>
+        {showGuide && (
+          <ul>
+            <li>Click a card to score a point.</li>
+            <li>The cards shuffle after every click.</li>
+            <li>Never click the same card twice in a round.</li>
+            <li>Click all {cards.length} cards without a repeat to win.</li>
+          </ul>
+        )}
+      </div>
       {hasLost && <h2 className="lost">Game over! Let's run this again</h2>}
       {hasWon ? (
         <div className="win">

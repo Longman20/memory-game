@@ -69,3 +69,23 @@ body {
   margin-top: 1rem;
   color: black;
 }
+.guide {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.guide button {
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.guide ul {
+  text-align: left;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem 1.5rem 1rem 2.5rem;
+  margin-top: 0.75rem;
+}
